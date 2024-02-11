@@ -1,0 +1,192 @@
+0	20:56:58.560	Custom indicator Bands USDJPY.m,Daily: loaded successfully
+0	20:56:58.570	Custom indicator Bands USDJPY.m,Daily: loaded successfully
+0	20:56:58.603	Bands USDJPY.m,Daily: initialized
+0	20:56:58.618	Bands USDJPY.m,Daily: initialized
+0	20:58:11.902	Custom indicator !sm_WorkTime_v1.5b EURUSD.m,Daily: loaded successfully
+0	20:58:11.913	Custom indicator 4_5938254622769547400 EURUSD.m,Daily: loaded successfully
+0	20:58:11.987	Custom indicator !_ADR_Marker EURUSD.m,Daily: loaded successfully
+0	20:58:12.061	Custom indicator !FXM _Multi_EMA EURUSD.m,Daily: loaded successfully
+0	20:58:12.134	Custom indicator !_Daily_HiLo EURUSD.m,Daily: loaded successfully
+0	20:58:12.207	Custom indicator MBFX-Snatcher EURUSD.m,Daily: loaded successfully
+0	20:58:12.218	Custom indicator Soportes y Resistencias BO EURUSD.m,Daily: loaded successfully
+0	20:58:12.290	Custom indicator MBFX-New-Trend-Predictor EURUSD.m,Daily: loaded successfully
+0	20:58:12.298	Custom indicator P4L CandleTime EURUSD.m,Daily: loaded successfully
+0	20:58:12.346	Custom indicator !btmm_TDI_Plus EURUSD.m,Daily: loaded successfully
+0	20:58:12.398	!sm_WorkTime_v1.5b EURUSD.m,Daily: initialized
+0	20:58:12.431	4_5938254622769547400 EURUSD.m,Daily: initialized
+0	20:58:12.431	!_ADR_Marker EURUSD.m,Daily: initialized
+0	20:58:12.431	!FXM _Multi_EMA EURUSD.m,Daily: initialized
+0	20:58:12.431	!_Daily_HiLo EURUSD.m,Daily: initialized
+0	20:58:12.431	MBFX-Snatcher EURUSD.m,Daily: initialized
+0	20:58:12.450	Soportes y Resistencias BO EURUSD.m,Daily: initialized
+0	20:58:12.450	MBFX-New-Trend-Predictor EURUSD.m,Daily: initialized
+0	20:58:12.460	P4L CandleTime EURUSD.m,Daily: initialized
+0	20:58:12.460	!btmm_TDI_Plus EURUSD.m,Daily: initialized
+0	20:58:21.489	!sm_WorkTime_v1.5b EURUSD.m,Daily: uninit reason 3
+0	20:58:21.489	4_5938254622769547400 EURUSD.m,Daily: uninit reason 3
+0	20:58:21.489	!_ADR_Marker EURUSD.m,Daily: deinitialized
+0	20:58:21.489	!_ADR_Marker EURUSD.m,Daily: uninit reason 3
+0	20:58:21.489	!FXM _Multi_EMA EURUSD.m,Daily: deinitialized
+0	20:58:21.489	!FXM _Multi_EMA EURUSD.m,Daily: uninit reason 3
+0	20:58:21.489	!_Daily_HiLo EURUSD.m,Daily: deinitialized
+0	20:58:21.489	!_Daily_HiLo EURUSD.m,Daily: uninit reason 3
+0	20:58:21.489	MBFX-Snatcher EURUSD.m,Daily: deinitialized
+0	20:58:21.489	MBFX-Snatcher EURUSD.m,Daily: uninit reason 3
+0	20:58:21.489	Soportes y Resistencias BO EURUSD.m,Daily: uninit reason 3
+0	20:58:21.490	MBFX-New-Trend-Predictor EURUSD.m,Daily: uninit reason 3
+0	20:58:21.490	P4L CandleTime EURUSD.m,Daily: uninit reason 3
+0	20:58:21.490	!btmm_TDI_Plus EURUSD.m,Daily: deinitialized
+0	20:58:21.490	!btmm_TDI_Plus EURUSD.m,Daily: uninit reason 3
+0	20:58:21.490	!sm_WorkTime_v1.5b EURUSD.m,M15: initialized
+0	20:58:21.490	4_5938254622769547400 EURUSD.m,M15: initialized
+0	20:58:21.490	!_ADR_Marker EURUSD.m,M15: initialized
+0	20:58:21.490	!FXM _Multi_EMA EURUSD.m,M15: initialized
+0	20:58:21.490	!_Daily_HiLo EURUSD.m,M15: initialized
+0	20:58:21.490	MBFX-Snatcher EURUSD.m,M15: initialized
+0	20:58:21.490	Soportes y Resistencias BO EURUSD.m,M15: initialized
+0	20:58:21.490	MBFX-New-Trend-Predictor EURUSD.m,M15: initialized
+0	20:58:21.490	P4L CandleTime EURUSD.m,M15: initialized
+0	20:58:21.490	!btmm_TDI_Plus EURUSD.m,M15: initialized
+0	20:58:33.501	Script sendingOrder EURUSD.m,M15: loaded successfully
+0	20:58:33.514	sendingOrder EURUSD.m,M15: initialized
+0	20:58:33.514	sendingOrder EURUSD.m,M15: Alert: 
+2	20:58:33.680	sendingOrder EURUSD.m,M15: open #254192222 buy 0.01 EURUSD.m at 1.07464 sl: 1.07354 tp: 1.07654 ok
+0	20:58:33.680	sendingOrder EURUSD.m,M15: Alert: OrderId: 254192222
+0	20:58:33.680	sendingOrder EURUSD.m,M15: uninit reason 0
+0	20:58:33.688	Script sendingOrder EURUSD.m,M15: removed
+0	21:08:05.559	!sm_WorkTime_v1.5b EURUSD.m,M15: uninit reason 7
+0	21:08:05.559	4_5938254622769547400 EURUSD.m,M15: uninit reason 7
+0	21:08:05.559	!_ADR_Marker EURUSD.m,M15: deinitialized
+0	21:08:05.559	!_ADR_Marker EURUSD.m,M15: uninit reason 7
+0	21:08:05.559	!FXM _Multi_EMA EURUSD.m,M15: deinitialized
+0	21:08:05.559	!FXM _Multi_EMA EURUSD.m,M15: uninit reason 7
+0	21:08:05.559	!_Daily_HiLo EURUSD.m,M15: deinitialized
+0	21:08:05.559	!_Daily_HiLo EURUSD.m,M15: uninit reason 7
+0	21:08:05.559	MBFX-Snatcher EURUSD.m,M15: deinitialized
+0	21:08:05.559	MBFX-Snatcher EURUSD.m,M15: uninit reason 7
+0	21:08:05.559	Soportes y Resistencias BO EURUSD.m,M15: uninit reason 7
+0	21:08:05.560	MBFX-New-Trend-Predictor EURUSD.m,M15: uninit reason 7
+0	21:08:05.560	P4L CandleTime EURUSD.m,M15: uninit reason 7
+0	21:08:05.560	!btmm_TDI_Plus EURUSD.m,M15: deinitialized
+0	21:08:05.560	!btmm_TDI_Plus EURUSD.m,M15: uninit reason 7
+0	21:08:05.561	Custom indicator !sm_WorkTime_v1.5b EURUSD.m,M15: removed
+0	21:08:05.563	Custom indicator 4_5938254622769547400 EURUSD.m,M15: removed
+0	21:08:05.563	Custom indicator !_ADR_Marker EURUSD.m,M15: removed
+0	21:08:05.563	Custom indicator !FXM _Multi_EMA EURUSD.m,M15: removed
+0	21:08:05.563	Custom indicator !_Daily_HiLo EURUSD.m,M15: removed
+0	21:08:05.563	Custom indicator MBFX-Snatcher EURUSD.m,M15: removed
+0	21:08:05.565	Custom indicator Soportes y Resistencias BO EURUSD.m,M15: removed
+0	21:08:05.565	Custom indicator MBFX-New-Trend-Predictor EURUSD.m,M15: removed
+0	21:08:05.566	Custom indicator P4L CandleTime EURUSD.m,M15: removed
+0	21:08:05.566	Custom indicator !btmm_TDI_Plus EURUSD.m,M15: removed
+0	21:08:05.583	Custom indicator Bands EURUSD.m,M15: loaded successfully
+0	21:08:05.592	Custom indicator Bands EURUSD.m,M15: loaded successfully
+0	21:08:05.605	Bands EURUSD.m,M15: initialized
+0	21:08:05.617	Bands EURUSD.m,M15: initialized
+0	21:08:28.059	Script bbScript EURUSD.m,M15: loaded successfully
+0	21:08:28.070	bbScript EURUSD.m,M15: initialized
+0	21:08:28.070	bbScript EURUSD.m,M15: Alert: 
+0	21:08:28.071	bbScript EURUSD.m,M15: Alert: SELL
+0	21:08:28.071	bbScript EURUSD.m,M15: Alert: Entry Price = 1.07452
+0	21:08:28.071	bbScript EURUSD.m,M15: Alert: Stop Loss Price = 1.07499193539782
+0	21:08:28.071	bbScript EURUSD.m,M15: Alert: Take Profit Price = 1.074218
+2	21:08:28.245	bbScript EURUSD.m,M15: open #254195072 sell limit 0.01 EURUSD.m at 1.07452 sl: 1.07499 tp: 1.07422 ok
+0	21:08:28.245	bbScript EURUSD.m,M15: uninit reason 0
+0	21:08:28.247	Script bbScript EURUSD.m,M15: removed
+0	21:08:49.265	Custom indicator !sm_WorkTime_v1.5b USDJPY.m,Daily: loaded successfully
+0	21:08:49.275	Custom indicator 4_5938254622769547400 USDJPY.m,Daily: loaded successfully
+0	21:08:49.348	Custom indicator !_ADR_Marker USDJPY.m,Daily: loaded successfully
+0	21:08:49.420	Custom indicator !FXM _Multi_EMA USDJPY.m,Daily: loaded successfully
+0	21:08:49.492	Custom indicator !_Daily_HiLo USDJPY.m,Daily: loaded successfully
+0	21:08:49.564	Custom indicator MBFX-Snatcher USDJPY.m,Daily: loaded successfully
+0	21:08:49.574	Custom indicator Soportes y Resistencias BO USDJPY.m,Daily: loaded successfully
+0	21:08:49.646	Custom indicator MBFX-New-Trend-Predictor USDJPY.m,Daily: loaded successfully
+0	21:08:49.655	Custom indicator P4L CandleTime USDJPY.m,Daily: loaded successfully
+0	21:08:49.701	Custom indicator !btmm_TDI_Plus USDJPY.m,Daily: loaded successfully
+0	21:08:49.744	!sm_WorkTime_v1.5b USDJPY.m,Daily: initialized
+0	21:08:49.777	4_5938254622769547400 USDJPY.m,Daily: initialized
+0	21:08:49.777	!_ADR_Marker USDJPY.m,Daily: initialized
+0	21:08:49.777	!FXM _Multi_EMA USDJPY.m,Daily: initialized
+0	21:08:49.777	!_Daily_HiLo USDJPY.m,Daily: initialized
+0	21:08:49.777	MBFX-Snatcher USDJPY.m,Daily: initialized
+0	21:08:49.795	Soportes y Resistencias BO USDJPY.m,Daily: initialized
+0	21:08:49.796	MBFX-New-Trend-Predictor USDJPY.m,Daily: initialized
+0	21:08:49.806	P4L CandleTime USDJPY.m,Daily: initialized
+0	21:08:49.806	!btmm_TDI_Plus USDJPY.m,Daily: initialized
+0	21:08:54.129	!sm_WorkTime_v1.5b USDJPY.m,Daily: uninit reason 4
+0	21:08:54.129	4_5938254622769547400 USDJPY.m,Daily: uninit reason 4
+0	21:08:54.129	!_ADR_Marker USDJPY.m,Daily: deinitialized
+0	21:08:54.129	!_ADR_Marker USDJPY.m,Daily: uninit reason 4
+0	21:08:54.129	!FXM _Multi_EMA USDJPY.m,Daily: deinitialized
+0	21:08:54.129	!FXM _Multi_EMA USDJPY.m,Daily: uninit reason 4
+0	21:08:54.129	!_Daily_HiLo USDJPY.m,Daily: deinitialized
+0	21:08:54.129	!_Daily_HiLo USDJPY.m,Daily: uninit reason 4
+0	21:08:54.129	MBFX-Snatcher USDJPY.m,Daily: deinitialized
+0	21:08:54.129	MBFX-Snatcher USDJPY.m,Daily: uninit reason 4
+0	21:08:54.129	Soportes y Resistencias BO USDJPY.m,Daily: uninit reason 4
+0	21:08:54.130	MBFX-New-Trend-Predictor USDJPY.m,Daily: uninit reason 4
+0	21:08:54.130	P4L CandleTime USDJPY.m,Daily: uninit reason 4
+0	21:08:54.130	!btmm_TDI_Plus USDJPY.m,Daily: deinitialized
+0	21:08:54.130	!btmm_TDI_Plus USDJPY.m,Daily: uninit reason 4
+0	21:08:54.132	Custom indicator !sm_WorkTime_v1.5b USDJPY.m,Daily: removed
+0	21:08:54.133	Custom indicator 4_5938254622769547400 USDJPY.m,Daily: removed
+0	21:08:54.133	Custom indicator !_ADR_Marker USDJPY.m,Daily: removed
+0	21:08:54.133	Custom indicator !FXM _Multi_EMA USDJPY.m,Daily: removed
+0	21:08:54.134	Custom indicator !_Daily_HiLo USDJPY.m,Daily: removed
+0	21:08:54.134	Custom indicator MBFX-Snatcher USDJPY.m,Daily: removed
+0	21:08:54.135	Custom indicator Soportes y Resistencias BO USDJPY.m,Daily: removed
+0	21:08:54.135	Custom indicator MBFX-New-Trend-Predictor USDJPY.m,Daily: removed
+0	21:08:54.137	Custom indicator P4L CandleTime USDJPY.m,Daily: removed
+0	21:08:54.137	Custom indicator !btmm_TDI_Plus USDJPY.m,Daily: removed
+0	21:09:01.683	Bands USDJPY.m,Daily: uninit reason 3
+0	21:09:01.683	Bands USDJPY.m,Daily: uninit reason 3
+0	21:09:01.683	Bands USDJPY.m,M15: initialized
+0	21:09:01.684	Bands USDJPY.m,M15: initialized
+0	21:09:19.185	Script bbScript USDJPY.m,M15: loaded successfully
+0	21:09:19.195	bbScript USDJPY.m,M15: initialized
+0	21:09:19.195	bbScript USDJPY.m,M15: Alert: 
+0	21:09:19.195	bbScript USDJPY.m,M15: uninit reason 0
+0	21:09:19.197	Script bbScript USDJPY.m,M15: removed
+0	21:09:29.214	Script bbScript USDJPY.m,M15: loaded successfully
+0	21:09:29.225	bbScript USDJPY.m,M15: initialized
+0	21:09:29.225	bbScript USDJPY.m,M15: Alert: 
+0	21:09:29.225	bbScript USDJPY.m,M15: Alert: BUY
+0	21:09:29.225	bbScript USDJPY.m,M15: Alert: Entry Price = 148.559
+0	21:09:29.225	bbScript USDJPY.m,M15: Alert: Stop Loss Price = 148.3943718059718
+0	21:09:29.225	bbScript USDJPY.m,M15: Alert: Take Profit Price = 148.6149999999996
+2	21:09:29.396	bbScript USDJPY.m,M15: open #254195203 buy limit 0.01 USDJPY.m at 148.559 sl: 148.394 tp: 148.615 ok
+0	21:09:29.396	bbScript USDJPY.m,M15: uninit reason 0
+0	21:09:29.398	Script bbScript USDJPY.m,M15: removed
+0	21:18:30.384	Script Variables USDJPY.m,M15: loaded successfully
+0	21:18:30.395	Variables USDJPY.m,M15: initialized
+0	21:18:30.396	Variables USDJPY.m,M15: Alert: Account balance: 101769.7
+0	21:18:30.396	Variables USDJPY.m,M15: Alert: Account server: JustMarkets-Demo
+0	21:18:30.396	Variables USDJPY.m,M15: Alert: Mode stop level: 0
+0	21:18:30.396	Variables USDJPY.m,M15: uninit reason 0
+0	21:18:30.397	Script Variables USDJPY.m,M15: removed
+0	21:26:05.558	Script sendingOrder EURUSD.m,M15: loaded successfully
+0	21:26:05.569	sendingOrder EURUSD.m,M15: initialized
+0	21:26:05.569	sendingOrder EURUSD.m,M15: Alert: 
+2	21:26:05.767	sendingOrder EURUSD.m,M15: open #254196692 buy 0.01 EURUSD.m at 1.07457 sl: 1.07348 tp: 1.07648 ok
+0	21:26:05.767	sendingOrder EURUSD.m,M15: Alert: OrderId: 254196692
+0	21:26:05.767	sendingOrder EURUSD.m,M15: uninit reason 0
+0	21:26:05.774	Script sendingOrder EURUSD.m,M15: removed
+0	21:29:41.446	Bands EURUSD.m,M15: uninit reason 3
+0	21:29:41.446	Bands EURUSD.m,M15: uninit reason 3
+0	21:29:41.446	Bands AUDCAD.m,M15: initialized
+0	21:29:41.446	Bands AUDCAD.m,M15: initialized
+0	21:29:47.751	Script sendingOrder AUDCAD.m,M15: loaded successfully
+0	21:29:47.762	sendingOrder AUDCAD.m,M15: initialized
+0	21:29:47.762	sendingOrder AUDCAD.m,M15: Alert: 
+2	21:29:47.942	sendingOrder AUDCAD.m,M15: open #254196835 buy 0.01 AUDCAD.m at 0.87823 sl: 0.87698 tp: 0.87998 ok
+0	21:29:47.942	sendingOrder AUDCAD.m,M15: Alert: OrderId: 254196835
+0	21:29:47.942	sendingOrder AUDCAD.m,M15: uninit reason 0
+0	21:29:47.943	Script sendingOrder AUDCAD.m,M15: removed
+0	21:34:30.426	Bands USDJPY.m,M15: uninit reason 9
+0	21:34:30.426	Bands USDJPY.m,M15: uninit reason 9
+0	21:34:30.426	Bands AUDCAD.m,M15: uninit reason 9
+0	21:34:30.426	Bands AUDCAD.m,M15: uninit reason 9
+0	21:34:30.468	Custom indicator Bands USDJPY.m,M15: removed
+0	21:34:30.471	Custom indicator Bands USDJPY.m,M15: removed
+0	21:34:30.480	Custom indicator Bands AUDCAD.m,M15: removed
+0	21:34:30.482	Custom indicator Bands AUDCAD.m,M15: removed
