@@ -55,29 +55,41 @@ bool IsTradingAllowed() {
   return true;
 }
 
+// the exchange rate of the quote currency to the deposit currency
+double getTickValue() {
+  double tickValue = MarketInfo(NULL, MODE_TICKVALUE);
+  if (Digits <= 3) {
+    tickValue = tickValue / 100;
+  }
+  return tickValue;
+}
+
 double optimalLotSize(double maxLossPercentage, int maxLossInPips) {
   double accountEquity = AccountEquity();
 
   double lotSize = MarketInfo(NULL, MODE_LOTSIZE);
 
   // the exchange rate of the quote currency to the deposit currency
-  double tickValue = MarketInfo(NULL, MODE_TICKVALUE);
-  if(Digits <= 3) {
-    tickValue = tickValue / 100;
-  }
+  double tickValue = getTickValue();
 
   double maxLossAccountCurrency = accountEquity * maxLossPercentage;
 
   double maxLossQuoteCurrency = maxLossAccountCurrency / tickValue;
 
-  double optimalLotSize = maxLossQuoteCurrency / (maxLossInPips * getPipValue()) / lotSize;
-  optimalLotSize = NormalizeDouble(optimalLotSize, 2);
+  double optimalLotSize = -1;
+  
+  if (maxLossInPips != 0) {
+    optimalLotSize = maxLossQuoteCurrency / (maxLossInPips * getPipValue()) / lotSize;
+    optimalLotSize = NormalizeDouble(optimalLotSize, 2);
+  } else {
+    Alert("The maximum loss in pips should be greater than 0.");
+  }
 
   return optimalLotSize;
 }
 
 double optimalLotSize(double maxLossPercentage, double entryPrice, double stopLossPrice) {
-  double maxLossInPips = MathAbs(entryPrice - stopLossPrice) / getPipValue();
+  double maxLossInPips = NormalizeDouble(MathAbs(entryPrice - stopLossPrice) / getPipValue(), 1);
   Alert("Max loss in pips: " + maxLossInPips);
 
   double result = optimalLotSize(maxLossPercentage, maxLossInPips);
