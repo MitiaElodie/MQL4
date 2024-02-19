@@ -96,3 +96,18 @@ double optimalLotSize(double maxLossPercentage, double entryPrice, double stopLo
 
   return result;
 }
+
+bool checkOpenOrderByMagicNumber(int magicNumber) {
+    int openOrders = OrdersTotal();
+
+    for (int i = 0; i < openOrders; i++)
+    {
+      if(OrderSelect(i, SELECT_BY_POS) == true) {
+        if(OrderMagicNumber() == magicNumber) {
+          Print("There is an open order with the magic number " + magicNumber);
+          return true;
+        }
+      }
+    }
+    return false;
+}
