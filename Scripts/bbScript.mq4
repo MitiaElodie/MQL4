@@ -15,7 +15,7 @@ int bbPeriod = 20;
 int bbDeviation = 1;
 
 int otherDeviation = 4;
-int maxLossPercentage = 0.01;
+double maxLossPercentage = 0.01;
 
 void OnStart()
   {
@@ -36,10 +36,6 @@ void OnStart()
     double midBbValue4 = iBands(NULL, PERIOD_CURRENT, bbPeriod, otherDeviation, 0, PRICE_CLOSE, MODE_MAIN, 0);
 
     int orderId;
-    Alert("Ask :" + Ask);
-    Alert("lowBbValue :" + lowBbValue);
-    Alert("Bid :" + Bid);
-    Alert("highBbValue :" + highBbValue);
     if(Ask < lowBbValue) {
       Alert("BUY");
       entryPrice = Ask;
@@ -57,6 +53,8 @@ void OnStart()
       lotSize = optimalLotSize(maxLossPercentage, entryPrice, stopLossPrice);
     
       orderId = OrderSend(NULL, OP_SELLLIMIT, 0.01, entryPrice, 10, stopLossPrice, takeProfitPrice);
+    } else {
+      Alert("No signal was found, will recompute again on next price update");
     }
     
     Alert("Entry Price = " + entryPrice);
