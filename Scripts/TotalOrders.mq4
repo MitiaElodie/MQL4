@@ -17,18 +17,18 @@ void OnStart()
   {
 //---
     Alert("");
+    double takeProfit = Ask + 0.01;
+    double stopLoss = Ask - 0.01;
 
-    Alert("Order open with magic number : " + checkOpenOrderByMagicNumber(magicNumber));
-    if(checkOpenOrderByMagicNumber(magicNumber)) {
-      Alert("Already order opened, do not send more orders");
-    } else {
-      OrderSend(NULL, OP_BUY, 0.01, Ask, 0.1, Ask - 0.01, Ask + 0.01, 0, magicNumber);
+    int orderId = OrderSend(NULL, OP_BUYLIMIT, 0.01, Ask, 10, stopLoss, takeProfit);
+
+    for (int i = 0; i < 5; i++)
+    {
+      Sleep(1000);
+      takeProfit += 0.01;
+      stopLoss -= 0.01;
+      OrderModify(orderId, 0, stopLoss, takeProfit, NULL, NULL);
     }
     
-    // if(openOrders < 1) {
-    //   Alert("No order open");
-    // } else {
-    //   Alert("There is already an open order, do not send one");
-    // }
   }
 //+------------------------------------------------------------------+
