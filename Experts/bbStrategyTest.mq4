@@ -18,6 +18,7 @@ int bbDeviation = 1;
 int otherDeviation = 4;
 double maxLossPercentage = 0.01;
 int magicNumber = 111;
+int orderId;
 
 int OnInit()
   {
@@ -39,21 +40,19 @@ void OnDeinit(const int reason)
 //+------------------------------------------------------------------+
 void OnTick() {
   if(IsTradingAllowed()) {
+    double highBbValue = iBands(NULL, PERIOD_CURRENT, bbPeriod, bbDeviation, 0, PRICE_CLOSE, MODE_UPPER, 0);
+    double lowBbValue = iBands(NULL, PERIOD_CURRENT, bbPeriod, bbDeviation, 0, PRICE_CLOSE, MODE_LOWER, 0);
+
+    double highBbValue4 = iBands(NULL, PERIOD_CURRENT, bbPeriod, otherDeviation, 0, PRICE_CLOSE, MODE_UPPER, 0);
+    double lowBbValue4 = iBands(NULL, PERIOD_CURRENT, bbPeriod, otherDeviation, 0, PRICE_CLOSE, MODE_LOWER, 0);
+    double midBbValue4 = iBands(NULL, PERIOD_CURRENT, bbPeriod, otherDeviation, 0, PRICE_CLOSE, MODE_MAIN, 0);
+    
     if(!checkOpenOrderByMagicNumber(magicNumber)) {
-
-      double highBbValue = iBands(NULL, PERIOD_CURRENT, bbPeriod, bbDeviation, 0, PRICE_CLOSE, MODE_UPPER, 0);
-      double lowBbValue = iBands(NULL, PERIOD_CURRENT, bbPeriod, bbDeviation, 0, PRICE_CLOSE, MODE_LOWER, 0);
-
       double stopLossPrice;
       double takeProfitPrice;
       double lotSize;
       double entryPrice;
 
-      double highBbValue4 = iBands(NULL, PERIOD_CURRENT, bbPeriod, otherDeviation, 0, PRICE_CLOSE, MODE_UPPER, 0);
-      double lowBbValue4 = iBands(NULL, PERIOD_CURRENT, bbPeriod, otherDeviation, 0, PRICE_CLOSE, MODE_LOWER, 0);
-      double midBbValue4 = iBands(NULL, PERIOD_CURRENT, bbPeriod, otherDeviation, 0, PRICE_CLOSE, MODE_MAIN, 0);
-
-      int orderId;
       if(Ask < lowBbValue) {
         Alert("BUY");
         entryPrice = Ask;
@@ -76,14 +75,36 @@ void OnTick() {
       } else {
         Alert("No signal was found, will recompute again on next price update");
       }
-      
-      Alert("Entry Price = " + entryPrice);
-      Alert("Stop Loss Price = " + stopLossPrice);
-      Alert("Take Profit Price = " + takeProfitPrice);
-      Alert("Lot size = " + lotSize);
 
       if(orderId < 0) {
         Alert("Order rejected, order error: " + GetLastError());
+      }
+    } else {
+      Alert("Order already open");
+
+      if(OrderSelect(orderId, SELECT_BY_TICKET) == true) {
+        int orderType = OrderType();
+
+        double currentExitPoint;
+
+        if(orderType == OP_BUY) {
+          currentExitPoint = NormalizeDouble(lowBbValue4, Digits);
+        } else {
+          currentExitPoint = NormalizeDouble(highBbValue4, Digits);
+        }
+
+        double currentMidLine = NormalizeDouble(midBbValue4, Digits);
+
+        double tp = OrderTakeProfit();
+        double sl = OrderStopLoss();
+
+        if (tp != currentMidLine || sl != currentExitPoint) {
+          bool answer = OrderModify(orderId, OrderOpenPrice(), currentExitPoint, currentMidLine, 0);
+
+          if(answer) {
+            Alert("Order modified: " + orderId);
+          }
+        }
       }
     }
   }
