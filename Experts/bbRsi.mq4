@@ -102,19 +102,23 @@ void OnTick()
         if(OrderSelect(openOrderId, SELECT_BY_TICKET) == true) {
           int orderType = OrderType();
 
-          double optimalTakeProfit;
+          double optimalTakeProfit = OrderTakeProfit();
+          double entryPrice = OrderOpenPrice();
+          bool isNegativeTakeProfit = true;
 
           // add a check to make sure the take profit is not negative
-          if(orderType == OP_BUY) { // WHAT ABOUT THE OTHER TYPE OF ORDER?? IF IT"S OP_BUYLIMIT???
+          if(orderType == OP_BUY || orderType == OP_BUYLIMIT) {
             optimalTakeProfit = NormalizeDouble(bbUpperProfitExit, Digits);
-          } else {
+            isNegativeTakeProfit = optimalTakeProfit < entryPrice;
+          } else if(orderType == OP_SELL || orderType == OP_SELLLIMIT){
             optimalTakeProfit = NormalizeDouble(bbLowerProfitExit, Digits);
+            isNegativeTakeProfit = optimalTakeProfit > entryPrice;
           }
 
           double tp = OrderTakeProfit();
           double tpDistance = MathAbs(tp - optimalTakeProfit);
 
-          if(tp != optimalTakeProfit && tpDistance > 0.0001) {
+          if(tp != optimalTakeProfit && tpDistance > 0.0001 && !isNegativeTakeProfit) {
             Print("Modify order");
 
             bool ans = OrderModify(openOrderId, OrderOpenPrice(), OrderStopLoss(), optimalTakeProfit, 0);
