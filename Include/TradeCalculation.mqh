@@ -7,6 +7,12 @@
 #property link      "https://www.mql5.com"
 #property strict
 
+enum TrendDirection
+{
+    TREND_BULLISH,
+    TREND_BEARISH,
+    TREND_NEUTRAL
+};
 // Position true = buy
 // Position false = sell
 double CalculateStopLossPrice(bool position, double entryPrice, int stopLossPips) {
@@ -110,4 +116,19 @@ bool checkOpenOrderByMagicNumber(int magicNumber) {
       }
     }
     return false;
+}
+
+TrendDirection CheckMarketSentiment() {
+  // Calculate the 50-period Simple Moving Average
+  double ma50 = iMA(Symbol(), 0, 50, 0, MODE_SMA, PRICE_CLOSE, 0);
+  // Calculate the 200-period Simple Moving Average
+  double ma200 = iMA(Symbol(), 0, 200, 0, MODE_SMA, PRICE_CLOSE, 0);
+  // Compare the two moving averages
+  if (ma50 > ma200) {
+    return TREND_BULLISH;
+  } else if (ma50 < ma200) {
+    return TREND_BEARISH;
+  } else {
+    return TREND_NEUTRAL;
+  }
 }
