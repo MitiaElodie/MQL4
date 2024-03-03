@@ -19,8 +19,8 @@ input int bandStdLossExit = 6;
 
 int rsiPeriod = 14;
 input double riskPerTrade = 0.02;
-input int rsiLowerLevel = 40;
-input int rsiUpperLevel = 60;
+input int rsiLowerLevel = 30;
+input int rsiUpperLevel = 70;
 
 int openOrderId;
 
