@@ -61,7 +61,7 @@ bool IsTradingAllowed() {
   return true;
 }
 
-// the exchange rate of the quote currency to the deposit currency
+// the exchange rate of the quote cuccccccccccrrency to the deposit currency
 double getTickValue() {
   double tickValue = MarketInfo(NULL, MODE_TICKVALUE);
   if (Digits <= 3) {
@@ -131,4 +131,24 @@ TrendDirection CheckMarketSentiment() {
   } else {
     return TREND_NEUTRAL;
   }
+}
+
+double calculatePipsDifference(double price1, double price2) {
+  return NormalizeDouble(MathAbs(price1 - price2) / getPipValue(), 1);
+}
+
+double calculateStopLossPriceFromRatio(double entryPrice, double takeProfitPrice, double ratio) {
+  double result;
+
+  double takeProfitPips = calculatePipsDifference(entryPrice, takeProfitPrice);
+  double stopLossPips = NormalizeDouble((takeProfitPips / ratio), 2);
+  double stopLossPipsValue = stopLossPips * getPipValue();
+
+  if(takeProfitPrice > entryPrice) {
+    result = entryPrice - stopLossPipsValue;
+  } else {
+    result = entryPrice + stopLossPipsValue;
+  }
+
+  return NormalizeDouble(result, Digits);
 }
