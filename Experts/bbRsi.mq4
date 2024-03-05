@@ -65,7 +65,7 @@ void OnTick()
       if(!checkOpenOrderByMagicNumber(magicNumber)) {
 
         // long position
-        if(Ask < bbLowerEntry && Open[0] > bbLowerEntry && rsiValue < rsiLowerLevel) {
+        if(Ask < bbLowerEntry && Open[0] > bbLowerEntry && rsiValue < rsiLowerLevel && CheckMarketSentiment() == TREND_BULLISH) {
           Print("");
           Print("Price is below bbLower and rsiValue is lower than " + rsiLowerLevel +" , sending buy order");
 
@@ -82,7 +82,7 @@ void OnTick()
           if(openOrderId < 0) Alert("Order rejected, Order error: " + GetLastError());
         }
         // short position
-        else if(Bid > bbUpperEntry && Open[0] < bbUpperEntry && rsiValue > rsiUpperLevel) {
+        else if(Bid > bbUpperEntry && Open[0] < bbUpperEntry && rsiValue > rsiUpperLevel && CheckMarketSentiment() == TREND_BEARISH) {
           Print("");
           Print("Price is above bbUpper and rsiValue is above than " + rsiUpperLevel +" , sending sell order");
 
