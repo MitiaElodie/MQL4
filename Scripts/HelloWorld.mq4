@@ -7,20 +7,51 @@
 #property link      "https://www.mql5.com"
 #property version   "1.00"
 #property strict
-#property show_inputs
 #include <TradeCalculation.mqh>
 //+------------------------------------------------------------------+
 //| Script program start function                                    |
 //+------------------------------------------------------------------+
-input double entryPrice = 1.0005;
-input double stopLossPrice = 1.0006;
-input double riskRatio = 2;
+
 void OnStart()
   {
     Alert("");
-    Alert(calculatePipsDifference(entryPrice, stopLossPrice));
+    
+    int bar = 0;
+    bool isPeakValue = false;
 
-    Alert(calculateStopLossPriceFromRatio(entryPrice, stopLossPrice, riskRatio));
+    while(isPeakValue == false) {
+      isPeakValue = isPeak(bar);
+      if(!isPeakValue) {
+        bar++;
+      }
+    }
+    Alert(bar);
+    DrawVerticalLine(bar);
+
+    bar = 0;
+    bool isLowValue = false;
+
+    while(isLowValue == false) {
+      isLowValue = isLow(bar);
+      if(!isLowValue) {
+        bar++;
+      }
+    }
+    Alert(bar);
+    DrawVerticalLine(bar, clrGreen);
   }
 //+------------------------------------------------------------------+
 
+void DrawVerticalLine(int index, color lineColor = clrRed)
+{
+    // Calculate the time of the candle
+    datetime candleTime = iTime(Symbol(), 0, index);
+    string lineName = "VerticalLine" + index + lineColor;
+
+    // Draw the line
+    ObjectCreate(0, lineName, OBJ_VLINE, 0, 0, 0);
+    ObjectSetInteger(0, lineName, OBJPROP_COLOR, lineColor);        // Line color
+    ObjectSetInteger(0, lineName, OBJPROP_WIDTH, 1);              // Line width
+    ObjectSetInteger(0, lineName, OBJPROP_TIME1, candleTime);     // Start time
+    ObjectSetInteger(0, lineName, OBJPROP_RAY_RIGHT, false);      // Draw the line to the left
+}
