@@ -152,3 +152,44 @@ double calculateStopLossPriceFromRatio(double entryPrice, double takeProfitPrice
 
   return NormalizeDouble(result, Digits);
 }
+
+bool isPeak(int bar, int peakBuffer = 5)
+{
+    double high = High[bar]; // High of the current bar
+
+    int begin = bar - peakBuffer;
+    if(begin < 0) {
+      begin = 0;
+    }
+    // Check if the high is the highest among its neighbors
+    for (int i = begin; i <= bar + peakBuffer; i++)
+    {
+        if (i != bar && High[i] >= high)
+        {
+            return false; // Current high is not a peak
+        }
+    }
+
+    return true; // Current high is a peak
+}
+
+bool isLow(int bar, int peakBuffer = 5)
+{
+    double low = Low[bar]; // Low of the current bar
+
+    int begin = bar - peakBuffer;
+    if (begin < 0) {
+        begin = 0;
+    }
+
+    // Check if the low is the lowest among its neighbors
+    for (int i = begin; i <= bar + peakBuffer; i++)
+    {
+        if (i != bar && Low[i] <= low)
+        {
+            return false; // Current low is not a valley
+        }
+    }
+
+    return true; // Current low is a valley
+}
