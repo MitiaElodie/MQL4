@@ -42,6 +42,8 @@ void OnTick()
         Alert("ema50: " + ema50);
 
         // TODO add check for when we took a SL and the price is still in the entry zone
+        // TODO add check if we are too close to ema 200
+
         int orderId;
         if(Ask > ema200 && ema50 > ema200) {
           Alert("Buy");
