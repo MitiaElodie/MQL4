@@ -26,31 +26,3 @@ void OnStart()
     DrawVerticalLine(bar, clrGreen);
   }
 //+------------------------------------------------------------------+
-
-int findFirstPeakIndex() {
-  int index = 0;
-  bool isPeakValue = false;
-
-  while(index < 1000) {
-    isPeakValue = isPeak(index);
-    if(!isPeakValue) {
-      index++;
-    }
-  }
-
-  return index;
-}
-
-int findFirstLowIndex() {
-  int index = 0;
-  bool isLowValue = false;
-
-    while(isLowValue == false) {
-      isLowValue = isLow(index);
-      if(!isLowValue) {
-        index++;
-      }
-    }
-
-  return index;
-}
