@@ -8,6 +8,7 @@
 #property version   "1.00"
 #property strict
 #include <TradeCalculation.mqh>
+#include <DisplayFunctions.mqh>
 //+------------------------------------------------------------------+
 //| Script program start function                                    |
 //+------------------------------------------------------------------+
@@ -16,42 +17,40 @@ void OnStart()
   {
     Alert("");
     
-    int bar = 0;
-    bool isPeakValue = false;
-
-    while(isPeakValue == false) {
-      isPeakValue = isPeak(bar);
-      if(!isPeakValue) {
-        bar++;
-      }
-    }
+    int bar = findFirstPeakIndex();
     Alert(bar);
     DrawVerticalLine(bar);
 
-    bar = 0;
-    bool isLowValue = false;
-
-    while(isLowValue == false) {
-      isLowValue = isLow(bar);
-      if(!isLowValue) {
-        bar++;
-      }
-    }
+    bar = findFirstLowIndex();
     Alert(bar);
     DrawVerticalLine(bar, clrGreen);
   }
 //+------------------------------------------------------------------+
 
-void DrawVerticalLine(int index, color lineColor = clrRed)
-{
-    // Calculate the time of the candle
-    datetime candleTime = iTime(Symbol(), 0, index);
-    string lineName = "VerticalLine" + index + lineColor;
+int findFirstPeakIndex() {
+  int index = 0;
+  bool isPeakValue = false;
 
-    // Draw the line
-    ObjectCreate(0, lineName, OBJ_VLINE, 0, 0, 0);
-    ObjectSetInteger(0, lineName, OBJPROP_COLOR, lineColor);        // Line color
-    ObjectSetInteger(0, lineName, OBJPROP_WIDTH, 1);              // Line width
-    ObjectSetInteger(0, lineName, OBJPROP_TIME1, candleTime);     // Start time
-    ObjectSetInteger(0, lineName, OBJPROP_RAY_RIGHT, false);      // Draw the line to the left
+  while(index < 1000) {
+    isPeakValue = isPeak(index);
+    if(!isPeakValue) {
+      index++;
+    }
+  }
+
+  return index;
+}
+
+int findFirstLowIndex() {
+  int index = 0;
+  bool isLowValue = false;
+
+    while(isLowValue == false) {
+      isLowValue = isLow(index);
+      if(!isLowValue) {
+        index++;
+      }
+    }
+
+  return index;
 }
