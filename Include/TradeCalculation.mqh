@@ -193,3 +193,31 @@ bool isLow(int bar, int peakBuffer = 5)
 
     return true; // Current low is a valley
 }
+
+int findFirstPeakIndex() {
+  int index = 0;
+  bool isPeakValue = false;
+
+  while(isPeakValue == false) {
+    isPeakValue = isPeak(index);
+    if(!isPeakValue) {
+      index++;
+    }
+  }
+
+  return index;
+}
+
+int findFirstLowIndex() {
+  int index = 0;
+  bool isLowValue = false;
+
+    while(isLowValue == false) {
+      isLowValue = isLow(index);
+      if(!isLowValue) {
+        index++;
+      }
+    }
+
+  return index;
+}
