@@ -8,8 +8,11 @@
 #property version   "1.00"
 #property strict
 #include <TradeCalculation.mqh>
+#include <DisplayFunctions.mqh>
 
 int magicNumber = 333;
+double ratio = 2;
+double maxLossPercentage = 0.01;
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
@@ -44,11 +47,26 @@ void OnTick()
         // TODO add check for when we took a SL and the price is still in the entry zone
         // TODO add check if we are too close to ema 200
 
-        int orderId;
-        if(Ask > ema200 && ema50 > ema200) {
-          Alert("Buy");
-        } else if(Bid < ema200 && ema50 < ema200) {
-          Alert("Sell");
+        int openOrderId;
+
+        if(Ask > ema200 && ema50 > ema200 && Ask < ema50 && Open[0] > ema50) {
+          int firstPeakIndex = findFirstPeakIndex();
+          double tpPrice = High[firstPeakIndex];
+          double slPrice = calculateStopLossPriceFromRatio(Ask, tpPrice, ratio);
+          double lotSize = optimalLotSize(maxLossPercentage, Ask, slPrice);
+
+          openOrderId = OrderSend(NULL, OP_BUYLIMIT, lotSize, Ask, 10, slPrice, tpPrice, NULL, magicNumber);
+          if(openOrderId < 0) Alert("Order rejected, Order error: " + GetLastError());
+        
+        } else if(Bid < ema200 && ema50 < ema200 && Bid > ema50 && Open[0] < ema50) {
+          int firstLowIndex = findFirstLowIndex();
+          double tpPrice = Low[firstLowIndex];
+          double slPrice = calculateStopLossPriceFromRatio(Ask, tpPrice, ratio);
+          double lotSize = optimalLotSize(maxLossPercentage, Bid, slPrice);
+
+          openOrderId = OrderSend(NULL, OP_SELLLIMIT, lotSize, Bid, 10, slPrice, tpPrice, NULL, magicNumber);
+          if(openOrderId < 0) Alert("Order rejected, Order error: " + GetLastError());
+          
         }
       }
     }
