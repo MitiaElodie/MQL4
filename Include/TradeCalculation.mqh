@@ -61,7 +61,7 @@ bool IsTradingAllowed() {
   return true;
 }
 
-// the exchange rate of the quote cuccccccccccrrency to the deposit currency
+// the exchange rate of the quote currency to the deposit currency
 double getTickValue() {
   double tickValue = MarketInfo(NULL, MODE_TICKVALUE);
   if (Digits <= 3) {
@@ -153,12 +153,15 @@ double calculateStopLossPriceFromRatio(double entryPrice, double takeProfitPrice
   return NormalizeDouble(result, Digits);
 }
 
-bool isPeak(int bar, int peakBuffer = 5)
+bool isPeak(int bar, bool considerNewPrice = true, int peakBuffer = 10)
 {
     double high = High[bar]; // High of the current bar
 
     int begin = bar - peakBuffer;
     if(begin < 0) {
+      if(!considerNewPrice) {
+        return false;
+      }
       begin = 0;
     }
     // Check if the high is the highest among its neighbors
@@ -173,13 +176,16 @@ bool isPeak(int bar, int peakBuffer = 5)
     return true; // Current high is a peak
 }
 
-bool isLow(int bar, int peakBuffer = 5)
+bool isLow(int bar, bool considerNewPrice = true, int peakBuffer = 10)
 {
     double low = Low[bar]; // Low of the current bar
 
     int begin = bar - peakBuffer;
     if (begin < 0) {
-        begin = 0;
+      if(!considerNewPrice) {
+        return false;
+      }
+      begin = 0;
     }
 
     // Check if the low is the lowest among its neighbors
@@ -199,7 +205,7 @@ int findFirstPeakIndex() {
   bool isPeakValue = false;
 
   while(isPeakValue == false) {
-    isPeakValue = isPeak(index);
+    isPeakValue = isPeak(index, false);
     if(!isPeakValue) {
       index++;
     }
@@ -213,7 +219,7 @@ int findFirstLowIndex() {
   bool isLowValue = false;
 
     while(isLowValue == false) {
-      isLowValue = isLow(index);
+      isLowValue = isLow(index, false);
       if(!isLowValue) {
         index++;
       }
