@@ -164,6 +164,27 @@ bool isPeak(int bar, bool considerNewPrice = true, int peakBuffer = 10)
       }
       begin = 0;
     }
+
+    // Initialize maxHigh and its index
+    double maxHigh = High[begin];
+    int maxIndex = begin;
+
+    // Find the highest high in the window
+    for (int i = begin + 1; i <= bar; i++)
+    {
+      if (High[i] > maxHigh)
+      {
+          maxHigh = High[i];
+          maxIndex = i;
+      }
+    }
+
+    // If the highest high is not the current bar, return false
+    if (maxIndex != bar)
+    {
+      return false;
+    }
+
     // Check if the high is the highest among its neighbors
     for (int i = begin; i <= bar + peakBuffer; i++)
     {
